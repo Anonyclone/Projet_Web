@@ -57,7 +57,7 @@ class RegisterController extends Controller
             'city_number' => 'required|numeric',
             'street_number' => 'required|numeric',
             'street_name' => 'required|string',
-            'phone' => 'required|numeric|phone_number|size:11',
+            'phone' => 'required|numeric',
             'password' => 'required|between:5,100|confirmed',
         ]);
     }
@@ -79,7 +79,7 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password'])
         ]);
 
-        $address = Address::create([
+        $address = AddressModel::create([
             'city_name' => $data['city_name'],
             'city_number' => $data['city_number'],
             'street_number' => $data['street_number'],

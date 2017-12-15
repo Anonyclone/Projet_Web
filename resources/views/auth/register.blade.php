@@ -50,7 +50,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('street_number') ? ' has-error' : '' }}">
                                 <label for="street_number" class="control-label">Voie</label>
-                                <input id="street_number" type="number" class="form-control" name="street_number" required>
+                                <input id="street_number" type="number" min="0" class="form-control" name="street_number" required>
                                 {!! $errors->first('street_number', '
                                 <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
                                     <strong>Erreur :</strong> :message
@@ -82,8 +82,8 @@
                                 </div>') !!}
                             </div>
                             <div class="form-group{{ $errors->has('city_number') ? ' has-error' : '' }}">
-                                <label for="city_number" class="control-label">Ville</label>
-                                <input id="city_number" type="number" class="form-control" name="city_number" required>
+                                <label for="city_number" class="control-label">Code postal</label>
+                                <input id="city_number" type="number" min="0" class="form-control" name="city_number" required>
                                 {!! $errors->first('city_number', '
                                 <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
                                     <strong>Erreur :</strong> :message
@@ -94,7 +94,7 @@
                             </div>
                             <p class="lead underline">Vos identifiants</p>
                             <div class="form-group{{ $errors->has('pseudo') ? ' has-error' : '' }}">
-                                <label for="pseudo" class="control-label">Adresse mail</label>
+                                <label for="pseudo" class="control-label">Pseudo</label>
                                 <input id="pseudo" type="text" class="form-control" name="pseudo" value="{{ old('pseudo') }}" required>
                                 {!! $errors->first('pseudo', '
                                 <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
