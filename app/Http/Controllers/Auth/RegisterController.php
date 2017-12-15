@@ -57,6 +57,7 @@ class RegisterController extends Controller
             'city_number' => 'required|numeric',
             'street_number' => 'required|numeric',
             'street_name' => 'required|string',
+            'pseudo' => 'required|string|unique:users',
             'phone' => 'required|numeric',
             'password' => 'required|between:5,100|confirmed',
         ]);
@@ -73,19 +74,20 @@ class RegisterController extends Controller
         $user = User::create([
             'surname' => $data['surname'],
             'firstname' => $data['firstname'],
-            'email' => $data['email'],
             'birth_date' => $data['birth_date'],
+            'email' => $data['email'],
+            'pseudo' => $data['pseudo'],
             'phone' => $data['phone'],
             'password' => bcrypt($data['password'])
         ]);
 
-        $address = AddressModel::create([
+        AddressModel::create([
             'city_name' => $data['city_name'],
             'city_number' => $data['city_number'],
             'street_number' => $data['street_number'],
             'street_name' => $data['street_name']
         ]);
 
-        return $user->address()->save($address);
+        return $user;
     }
 }

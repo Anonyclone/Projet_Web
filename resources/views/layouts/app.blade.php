@@ -42,14 +42,13 @@
                             <li class="guest-button-log"><a href="{{ route('login') }}" class="btn btn-outline-primary">Connexion <i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
                             <li class="guest-button-log"><a href="{{ route('register') }}" class="btn btn-outline-primary">Inscription <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                         @else
-                            <li class="dropdown show">
-                                <a href="#" class="btn btn-default" data-toggle="dropdownMenu" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="btn btn-outline-primary" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ Auth::user()->firstname }} <i class="fa fa-user-circle" aria-hidden="true"></i>
                                 </a>
 
-                                <ul class="dropdown-menu" id="dropdownMenu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                        <a  class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Se déconnecter
@@ -58,8 +57,7 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                    </li>
-                                </ul>
+                                </div>
                             </li>
                         @endguest
                     </ul>

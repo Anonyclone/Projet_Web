@@ -37,6 +37,17 @@
                                     </button>
                                 </div>') !!}
                             </div>
+                            <div class="form-group{{ $errors->has('birth_date') ? ' has-error' : '' }}">
+                                <label for="birth_date" class="control-label">Date de naissance</label>
+                                <input id="birth_date" type="date" class="form-control" name="birth_date" required>
+                                {!! $errors->first('birth_date', '
+                                <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
+                                    <strong>Erreur :</strong> :message
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>') !!}
+                            </div>
                             <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                                 <label for="phone" class="control-label">Numéro de téléphone</label>
                                 <input id="phone" type="tel" class="form-control" name="phone" required>
