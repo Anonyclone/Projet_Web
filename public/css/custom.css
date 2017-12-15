@@ -5,36 +5,21 @@ body{
     padding:0px;
 }
 
-#container{
-    position:relative;
-    width:990px;
-    margin:auto;
-    background:#FFFFFF;
-    padding:20px 0px 20px 0px;
+.guest-button-log {
+    margin: 5px 10px;
 }
 
-#container h1{
-    margin:0px 0px 10px 20px;
+.text-center {
+    text-align: center;
 }
 
-#container #map{
-    width:700px;
-    height:500px;
-    margin:auto;
+.alert {
+    margin: 10px 0px;
 }
 
-#container #panel{
-    width:700px;
-    margin:auto;
-}
-
-#container #destinationForm{
-    margin:0px 0px 20px 0px;
-    background:#EEEEEE;
-    padding:10px 20px;
-    border:solid 1px #C0C0C0;
-}
-
-#container #destinationForm input[type=text]{
-    border:solid 1px #C0C0C0;
+.underline {
+    border-color: rgba(0,0,0,.125);
+    border-style: solid;
+    border-width: 0px 0px 1px;
+    padding-bottom: 5px;
 }

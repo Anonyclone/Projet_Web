@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Providers;
+namespace Tartempion\Providers;
 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,6 +16,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        Validator::extend('phone_number', function ($attribute, $value, $parameters) {
+            return substr($value, 0, 2) == '01';
+        });
     }
 
     /**

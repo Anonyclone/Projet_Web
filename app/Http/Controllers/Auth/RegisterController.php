@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Tartempion\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use Tartempion\AddressModel;
+use Tartempion\User;
+use Tartempion\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -51,7 +52,13 @@ class RegisterController extends Controller
             'surname' => 'between:1,50|required',
             'firstname' => 'between:1,50|required',
             'email' => 'unique:users|email',
-            'password' => 'required|between:5,100|confirmed'
+            'birth_date' => 'required|date',
+            'city_name' => 'required|string',
+            'city_number' => 'required|numeric',
+            'street_number' => 'required|numeric',
+            'street_name' => 'required|string',
+            'phone' => 'required|numeric|phone_number|size:11',
+            'password' => 'required|between:5,100|confirmed',
         ]);
     }
 
@@ -59,15 +66,26 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \Tartempion\User
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'surname' => $data['surname'],
             'firstname' => $data['firstname'],
             'email' => $data['email'],
+            'birth_date' => $data['birth_date'],
+            'phone' => $data['phone'],
             'password' => bcrypt($data['password'])
         ]);
+
+        $address = Address::create([
+            'city_name' => $data['city_name'],
+            'city_number' => $data['city_number'],
+            'street_number' => $data['street_number'],
+            'street_name' => $data['street_name']
+        ]);
+
+        return $user->address()->save($address);
     }
 }

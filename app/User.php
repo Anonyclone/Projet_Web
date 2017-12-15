@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Tartempion;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -18,6 +18,7 @@ class User extends Authenticatable
         'surname',
         'firstname',
         'email',
+        'phone',
         'password'
     ];
 
@@ -29,4 +30,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function address() {
+        return $this->hasOne('Tartempion\AddressModel', 'id_address');
+    }
 }
