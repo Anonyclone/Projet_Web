@@ -17,6 +17,6 @@ class AddressModel extends Model
     ];
 
     public function user() {
-        return $this->belongsTo('Tartempion\User', 'id_user');
+        return $this->belongsToMany('App\User');
     }
 }

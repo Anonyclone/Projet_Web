@@ -50,52 +50,8 @@
                             </div>
                             <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                                 <label for="phone" class="control-label">Numéro de téléphone</label>
-                                <input id="phone" type="tel" class="form-control" name="phone" value="{{ old('phone') }}" required>
+                                <input id="phone" type="tel" class="form-control" name="phone" pattern='^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$' value="{{ old('phone') }}">
                                 {!! $errors->first('phone', '
-                                <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
-                                    <strong>Erreur :</strong> :message
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>') !!}
-                            </div>
-                            <div class="form-group{{ $errors->has('street_number') ? ' has-error' : '' }}">
-                                <label for="street_number" class="control-label">Voie</label>
-                                <input id="street_number" type="number" min="0" class="form-control" name="street_number" value="{{ old('street_number') }}" required>
-                                {!! $errors->first('street_number', '
-                                <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
-                                    <strong>Erreur :</strong> :message
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>') !!}
-                            </div>
-                            <div class="form-group{{ $errors->has('street_name') ? ' has-error' : '' }}">
-                                <label for="street_name" class="control-label">Rue</label>
-                                <input id="street_name" type="text" class="form-control" name="street_name" value="{{ old('street_name') }}" required>
-                                {!! $errors->first('street_name', '
-                                <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
-                                    <strong>Erreur :</strong> :message
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>') !!}
-                            </div>
-                            <div class="form-group{{ $errors->has('city_name') ? ' has-error' : '' }}">
-                                <label for="city_name" class="control-label">Ville</label>
-                                <input id="city_name" type="text" class="form-control" name="city_name" value="{{ old('city_name') }}" required>
-                                {!! $errors->first('city_name', '
-                                <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
-                                    <strong>Erreur :</strong> :message
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>') !!}
-                            </div>
-                            <div class="form-group{{ $errors->has('city_number') ? ' has-error' : '' }}">
-                                <label for="city_number" class="control-label">Code postal</label>
-                                <input id="city_number" type="number" min="0" class="form-control" name="city_number" value="{{ old('city_number') }}" required>
-                                {!! $errors->first('city_number', '
                                 <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
                                     <strong>Erreur :</strong> :message
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

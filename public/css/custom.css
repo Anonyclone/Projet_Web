@@ -1,8 +1,12 @@
 body{
-    font-family:Arial;
-    background: white url('/img/home/road.jpeg') no-repeat center center;
     margin:0px;
     padding:0px;
+
+    background: url('/img/home/road.jpeg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .guest-button-log {
@@ -38,6 +42,9 @@ body{
 .btn a:focus {
     color: white;
     text-decoration: none;
+}
+
+a.btn {
 }
 
 .dropdown-item > a,
