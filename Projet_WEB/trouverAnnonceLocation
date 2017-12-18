@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Trouver une annonce location</title>
+</head>
+<body>
+	<header><h1>Trouver une annonce de location </h1></header>
+
+<form action="" method="post">
+
+	<p>Lieu de location : 
+		<input type="text" name="lieu" />
+	</p>
+	<p>Type de location : 
+		<select type="text" name="location">
+            <option value="velo">Vélo</option>
+            <option value="voiture">Voiture</option>
+            <option value="trotinette">Trotinette</option>
+            <option value="dragon">Dragon</option>
+        </select>
+	</p>	
+	<p>Date : 
+		<input type="date" name="date" />
+	</p>
+	<p>Durée de disponibilité : <!--Requête sql pour recup le bon champ -->
+		<select type="text" name="PrixPar"><br/>
+        	<option value="heure">Heure(s)</option>
+            <option value="jour">Jour(s)</option>
+            <option value="semaine">Semaine(s)</option>
+            <option value="mois">Mois</option>
+            <option value="an">An(s)</option>
+      	</select>  
+		<input type="number" name="duree">
+	</p>
+<br/><br/>
+		<input type="submit" value="Chercher une location"/> <input type="submit" value="Retour">
+</form>
+</body>
+</html>
