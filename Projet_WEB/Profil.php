@@ -65,7 +65,7 @@
 				<label><input type="radio" name="vehiculeRadio" value="oui" readonly />Oui</label>
 				<label><input type="radio" name="vehiculeRadio" value="non" readonly />Non</label>
 			</div>
-			<button type="submit" class="btn btn-primary" value="Edit"/>Editer</form> <button type="submit" class="btn btn-primary" value="Retour">Retour</button>
+			<button type="submit" class="btn btn-primary" value="Edit"/>Editer</button> <button type="submit" class="btn btn-primary" value="Retour">Retour</button>
 		</form>
 	</body>
 </html>
