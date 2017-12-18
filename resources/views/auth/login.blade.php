@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-6 mx-auto">
                 <div class="card card-default">
-                    <div class="card-header">Connexion</div>
+                    <div class="card-header"><p class="lead">Connexion</p></div>
 
                     <div class="card-body">
                         <form class="form-horizontal" method="POST" action="{{ route('login') }}">

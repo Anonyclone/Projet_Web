@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-6 mx-auto">
                 <div class="card card-default">
-                    <div class="card-header">Inscription</div>
+                    <div class="card-header"><p class="lead">Inscription</p></div>
                     <div class="card-body">
                         <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
@@ -39,7 +39,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('birth_date') ? ' has-error' : '' }}">
                                 <label for="birth_date" class="control-label">Date de naissance</label>
-                                <input id="birth_date" type="date" class="form-control" name="birth_date" required>
+                                <input id="birth_date" type="date" class="form-control" name="birth_date" value="{{ old('birth_date') }}" required>
                                 {!! $errors->first('birth_date', '
                                 <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
                                     <strong>Erreur :</strong> :message
@@ -50,7 +50,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                                 <label for="phone" class="control-label">Numéro de téléphone</label>
-                                <input id="phone" type="tel" class="form-control" name="phone" required>
+                                <input id="phone" type="tel" class="form-control" name="phone" value="{{ old('phone') }}" required>
                                 {!! $errors->first('phone', '
                                 <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
                                     <strong>Erreur :</strong> :message
@@ -61,7 +61,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('street_number') ? ' has-error' : '' }}">
                                 <label for="street_number" class="control-label">Voie</label>
-                                <input id="street_number" type="number" min="0" class="form-control" name="street_number" required>
+                                <input id="street_number" type="number" min="0" class="form-control" name="street_number" value="{{ old('street_number') }}" required>
                                 {!! $errors->first('street_number', '
                                 <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
                                     <strong>Erreur :</strong> :message
@@ -72,7 +72,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('street_name') ? ' has-error' : '' }}">
                                 <label for="street_name" class="control-label">Rue</label>
-                                <input id="street_name" type="text" class="form-control" name="street_name" required>
+                                <input id="street_name" type="text" class="form-control" name="street_name" value="{{ old('street_name') }}" required>
                                 {!! $errors->first('street_name', '
                                 <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
                                     <strong>Erreur :</strong> :message
@@ -83,7 +83,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('city_name') ? ' has-error' : '' }}">
                                 <label for="city_name" class="control-label">Ville</label>
-                                <input id="city_name" type="text" class="form-control" name="city_name" required>
+                                <input id="city_name" type="text" class="form-control" name="city_name" value="{{ old('city_name') }}" required>
                                 {!! $errors->first('city_name', '
                                 <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
                                     <strong>Erreur :</strong> :message
@@ -94,7 +94,7 @@
                             </div>
                             <div class="form-group{{ $errors->has('city_number') ? ' has-error' : '' }}">
                                 <label for="city_number" class="control-label">Code postal</label>
-                                <input id="city_number" type="number" min="0" class="form-control" name="city_number" required>
+                                <input id="city_number" type="number" min="0" class="form-control" name="city_number" value="{{ old('city_number') }}" required>
                                 {!! $errors->first('city_number', '
                                 <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
                                     <strong>Erreur :</strong> :message

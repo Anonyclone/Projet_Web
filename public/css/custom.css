@@ -1,6 +1,6 @@
 body{
     font-family:Arial;
-    background:white;
+    background: white url('/img/home/road.jpeg') no-repeat center center;
     margin:0px;
     padding:0px;
 }
@@ -13,6 +13,10 @@ body{
     text-align: center;
 }
 
+.navbar-custom {
+    background: rgba(255, 255, 255, 0.9);
+}
+
 .alert {
     margin: 10px 0px;
 }
@@ -22,4 +26,39 @@ body{
     border-style: solid;
     border-width: 0px 0px 1px;
     padding-bottom: 5px;
+}
+
+#main-body {
+    margin: 50px 0px;
+}
+
+.btn a,
+.btn a:hover,
+.btn a:active,
+.btn a:focus {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-item > a,
+.dropdown-item > a:hover,
+.dropdown-item > a:active,
+.dropdown-item > a:focus {
+    color: #212529;
+    text-decoration: none;
+}
+
+.lead {
+    margin: 0px;
+}
+
+#map {
+    width:700px;
+    height:500px;
+    margin:auto;
+}
+
+#panel {
+    width:700px;
+    margin:auto;
 }

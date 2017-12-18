@@ -4,7 +4,7 @@ var initialize;
 var calculate;
 var direction;
 
-initialize = function(){
+initMap = function(){
   var latLng = new google.maps.LatLng(50.6371834, 3.063017400000035); // Correspond au coordonnées de Lille
   var myOptions = {
     zoom      : 14, // Zoom par défaut
@@ -82,5 +82,3 @@ calculate = function(){
         });
     }
 };
-
-initialize();

@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-6 mx-auto">
             <div class="card card-default">
-                <div class="card-header">Réinitialiser le mot de passe</div>
+                <div class="card-header"><p class="lead">Réinitialiser le mot de passe</p></div>
 
                 <div class="card-body">
                     @if (session('status'))

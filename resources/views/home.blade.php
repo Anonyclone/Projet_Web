@@ -22,20 +22,6 @@
                     <p class="mb-0">Vous pouvez maintenant publier ou chercher des annonces.</p>
                 </div>
             </div>
-            <h1>Calcul d'itinéraire Google Maps Api V3</h1>
-            <div id="destinationForm">
-                <form action="" method="get" name="direction" id="direction">
-                    <label>Point de départ :</label>
-                    <input type="text" name="origin" id="origin">
-                    <label>Destination :</label>
-                    <input type="text" name="destination" id="destination">
-                    <input type="button" value="Calculer l'itinéraire" onclick="javascript:calculate()">
-                </form>
-            </div>
-            <div id="card"></div>
-            <div id="map">
-                <p>Veuillez patienter pendant le chargement de la carte...</p>
-            </div>
         </div>
     </div>
 @endsection

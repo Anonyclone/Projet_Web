@@ -13,3 +13,8 @@
 
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/itinéraire', 'MapController@get')->name('map');
+Route::get('/profil', 'ProfilController@get')->name('profil_get');
+Route::post('/post', 'ProfilController@post')->name('profil_post');
+Route::get('/nouvelle-annonce', 'NewPostController@get')->name('new_post_get');
+Route::get('/chercher-une-annonce', 'SearchPostController@get')->name('search_post_get');
