@@ -23,7 +23,7 @@
 				<label for="Date">Date : </label>
 				<input type="date" class="form-control" name="date" />
 			</div>
-			<button type="submit" value="ChercherTrajet"/>Chercher un trajet</button> <button type="submit" value="Retour">Retour</button>
+			<button type="submit" class="btn btn-primary" value="ChercherTrajet"/>Chercher un trajet</button> <button type="submit" class="btn btn-primary" value="Retour">Retour</button>
 		</form>
 	</body>
 </html>
