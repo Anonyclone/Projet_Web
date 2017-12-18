@@ -45,6 +45,14 @@
             </div>
             <div class="form-group">
                 <label for="DureeDispo">Durée de disponibilité : </label>
+                <label for="DispoEn"> </label>
+                    <select type="text" name="dispoEn"><br/>
+                    <option value="heure">Heure</option>
+                    <option value="jour">Jour</option>
+                    <option value="semaine">Semaine</option>
+                    <option value="mois">Mois</option>
+                    <option value="an">An</option>
+                </select>
                 <input type="number" class="form-control" name="dureeDispo">
             </div>
             <button type="submit" class="btn btn-primary">Valider</button>
