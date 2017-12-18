@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Profile</title>
+	<title>Profil</title>
 <body>
-	<header><h1>Profile</h1></header>
+	<header><h1>Profil</h1></header>
 
 <form action="" method="post">
 
