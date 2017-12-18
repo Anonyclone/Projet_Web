@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Formulaire pour trouver en ligne une annonce de location</title>
