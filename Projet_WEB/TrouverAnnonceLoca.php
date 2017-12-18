@@ -17,13 +17,13 @@
 			</div>
 			<div class="form-group-fluid">
 				<label for="Location">Type de location : </label>
-				<input type="text" class="form-control" name="location" />
 				<select type="text" name="location">
 		            <option value="velo">Vélo</option>
 		            <option value="voiture">Voiture</option>
 		            <option value="trotinette">Trotinette</option>
 		            <option value="dragon">Dragon</option>
-	       		 </select>
+	       		</select>
+				<input type="text" class="form-control" name="location" />
 			</div>
 			<div class="form-group-fluid">
 				<label for="Date">Date : </label>
