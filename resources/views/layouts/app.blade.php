@@ -56,16 +56,19 @@
 
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
                                     <li class="dropdown-item">
-                                        <a href="{{ route('profil_get') }}">Profil <i class="fa fa-user" aria-hidden="true"></i></a>
+                                        <a href="{{ route('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a>
                                     </li>
                                     <li class="dropdown-item">
-                                        <a href="{{ route('settings_get') }}">Confidentialité <i class="fa fa-lock" aria-hidden="true"></i></a>
+                                        <a href="{{ route('profil_get') }}"><i class="fa fa-user" aria-hidden="true"></i> Profil</a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="{{ route('settings_get') }}"><i class="fa fa-lock" aria-hidden="true"></i> Confidentialité</a>
                                     </li>
                                     <li class="dropdown-item">
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Se déconnecter <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                            <i class="fa fa-sign-out" aria-hidden="true"></i> Se déconnecter
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

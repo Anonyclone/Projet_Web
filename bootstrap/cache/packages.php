@@ -6,13 +6,6 @@
       0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     ),
   ),
-  'laravel/tinker' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laravel\\Tinker\\TinkerServiceProvider',
-    ),
-  ),
   'laravelcollective/html' => 
   array (
     'providers' => 
@@ -23,6 +16,24 @@
     array (
       'Form' => 'Collective\\Html\\FormFacade',
       'Html' => 'Collective\\Html\\HtmlFacade',
+    ),
+  ),
+  'jenssegers/date' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Jenssegers\\Date\\DateServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Date' => 'Jenssegers\\Date\\Date',
+    ),
+  ),
+  'laravel/tinker' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Tinker\\TinkerServiceProvider',
     ),
   ),
 );

@@ -24,12 +24,13 @@
     20 => 'Illuminate\\Validation\\ValidationServiceProvider',
     21 => 'Illuminate\\View\\ViewServiceProvider',
     22 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
-    23 => 'Laravel\\Tinker\\TinkerServiceProvider',
-    24 => 'Collective\\Html\\HtmlServiceProvider',
-    25 => 'Tartempion\\Providers\\AppServiceProvider',
-    26 => 'Tartempion\\Providers\\AuthServiceProvider',
-    27 => 'Tartempion\\Providers\\EventServiceProvider',
-    28 => 'Tartempion\\Providers\\RouteServiceProvider',
+    23 => 'Collective\\Html\\HtmlServiceProvider',
+    24 => 'Jenssegers\\Date\\DateServiceProvider',
+    25 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    26 => 'Tartempion\\Providers\\AppServiceProvider',
+    27 => 'Tartempion\\Providers\\AuthServiceProvider',
+    28 => 'Tartempion\\Providers\\EventServiceProvider',
+    29 => 'Tartempion\\Providers\\RouteServiceProvider',
   ),
   'eager' => 
   array (
@@ -44,10 +45,11 @@
     8 => 'Illuminate\\Session\\SessionServiceProvider',
     9 => 'Illuminate\\View\\ViewServiceProvider',
     10 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
-    11 => 'Tartempion\\Providers\\AppServiceProvider',
-    12 => 'Tartempion\\Providers\\AuthServiceProvider',
-    13 => 'Tartempion\\Providers\\EventServiceProvider',
-    14 => 'Tartempion\\Providers\\RouteServiceProvider',
+    11 => 'Jenssegers\\Date\\DateServiceProvider',
+    12 => 'Tartempion\\Providers\\AppServiceProvider',
+    13 => 'Tartempion\\Providers\\AuthServiceProvider',
+    14 => 'Tartempion\\Providers\\EventServiceProvider',
+    15 => 'Tartempion\\Providers\\RouteServiceProvider',
   ),
   'deferred' => 
   array (
@@ -147,11 +149,11 @@
     'translation.loader' => 'Illuminate\\Translation\\TranslationServiceProvider',
     'validator' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'validation.presence' => 'Illuminate\\Validation\\ValidationServiceProvider',
-    'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
     'html' => 'Collective\\Html\\HtmlServiceProvider',
     'form' => 'Collective\\Html\\HtmlServiceProvider',
     'Collective\\Html\\HtmlBuilder' => 'Collective\\Html\\HtmlServiceProvider',
     'Collective\\Html\\FormBuilder' => 'Collective\\Html\\HtmlServiceProvider',
+    'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
   ),
   'when' => 
   array (
@@ -191,10 +193,10 @@
     'Illuminate\\Validation\\ValidationServiceProvider' => 
     array (
     ),
-    'Laravel\\Tinker\\TinkerServiceProvider' => 
+    'Collective\\Html\\HtmlServiceProvider' => 
     array (
     ),
-    'Collective\\Html\\HtmlServiceProvider' => 
+    'Laravel\\Tinker\\TinkerServiceProvider' => 
     array (
     ),
   ),

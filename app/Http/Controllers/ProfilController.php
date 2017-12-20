@@ -34,5 +34,7 @@ class ProfilController extends Controller
         $user->description = $request->input('description');
         $user->permis = $request->input('permis');
         $user->vehicule = $request->input('vehicule');
+        $user->save();
+        return view('home');
     }
 }

@@ -23,19 +23,17 @@
                 <div class="tab-content">
                     <div id="location" class="tab-pane">
                         <form>
+                            <p class="lead underline">Caractéristiques</p>
                             <div class="form-group">
-                                <label for="PrixPar">Prix par : </label>
-                                <select type="text" name="PrixPar"><br/>
-                                    <option value="heure">Heure</option>
-                                    <option value="jour">Jour</option>
-                                    <option value="semaine">Semaine</option>
-                                    <option value="mois">Mois</option>
-                                    <option value="an">An</option>
-                                </select>
-                                <input type="number" class="form-control" name="prixPar">
+                                <label for="title">Titre :</label>
+                                <input type="text" name="title" class="form-control" value="">
                             </div>
                             <div class="form-group">
-                                <label for="TypeLocation">Type de location : </label>
+                                <label for="price">Tarif à l'heure :</label>
+                                <input type="number" class="form-control" name="price">
+                            </div>
+                            <div class="form-group">
+                                <label for="TypeLocation">Type de location :</label>
                                 <select class="form-control" type="text" name="location">
                                     <option value="velo">Vélo</option>
                                     <option value="voiture">Voiture</option>
@@ -44,30 +42,23 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="LieuDispo">Lieu de disponibilité : </label>
+                                <label for="description">Description :</label>
+                                <textarea type="text" class="form-control" name="description"></textarea>
+                            </div>
+                            <p class="lead underline">Disponibilité</p>
+                            <div class="form-group">
+                                <label for="LieuDispo">Le lieu :</label>
                                 <input type="text" class="form-control" name="lieuDispo" placeholder="Entrez le lieu de rendez-vous">
                             </div>
                             <div class="form-group">
-                                <label for="DateDispo">Disponible à partir de (jour) : </label>
-                                <input type="date" class="form-control"name="dateDispo">
+                                <label for="date_begin">À partir du</label>
+                                <input type="date" class="form-control" name="date_begin">
                             </div>
                             <div class="form-group">
-                                <label for="HeureDispo">Disponible à partir de (heure) : </label>
-                                <input type="time" class="form-control" name="heureDispo">
+                                <label for="date_end">jusqu'à</label>
+                                <input type="date" class="form-control" name="date_end">
                             </div>
-                            <div class="form-group">
-                                <label for="DureeDispo">Durée de disponibilité : </label>
-                                <label for="DispoEn"> </label>
-                                <select type="text" name="dispoEn"><br/>
-                                    <option value="heure">Heure</option>
-                                    <option value="jour">Jour</option>
-                                    <option value="semaine">Semaine</option>
-                                    <option value="mois">Mois</option>
-                                    <option value="an">An</option>
-                                </select>
-                                <input type="number" class="form-control" name="dureeDispo">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Valider</button>
+                            <button type="submit" class="btn btn-outline-primary">Valider</button>
                         </form>
                     </div>
                     <div id="covoiturage" class="tab-pane">
@@ -120,7 +111,7 @@
                                 <label><input type="radio" name="fumeur" value="oui"/>Oui</label>
                                 <label><input type="radio" name="fumeur" value="non"/>Non</label>
                             </div>
-                            <button type="submit" class="btn btn-primary">Valider</button>
+                            <button type="submit" class="btn btn-outline-primary">Valider</button>
                         </form>
                     </div>
                 </div>
