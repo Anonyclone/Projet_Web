@@ -42,7 +42,10 @@ return [
     */
 
     'disks' => [
-
+        'avatar' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/img/avatars')
+        ],
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

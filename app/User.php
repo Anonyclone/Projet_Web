@@ -21,7 +21,11 @@ class User extends Authenticatable
         'birth_date',
         'pseudo',
         'phone',
-        'password'
+        'password',
+        'avatar',
+        'description',
+        'permis',
+        'vehicule'
     ];
 
     /**

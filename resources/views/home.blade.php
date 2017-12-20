@@ -17,7 +17,7 @@
                 @endif
                 <div class="alert alert-secondary" role="alert">
                     <h4 class="alert-heading">Bienvenue!</h4>
-                    <p>Bonjour <b>{{ $user['firstname'] }}</b> et bienvenue sur votre espace personnel</p>
+                    <p>Bonjour <b>{{ $user['pseudo'] }}</b> et bienvenue sur votre espace personnel</p>
                     <hr>
                     <p class="mb-0">Vous pouvez maintenant publier ou chercher des annonces.</p>
                 </div>
