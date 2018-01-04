@@ -20,8 +20,8 @@ class CreateLocationTable extends Migration
             $table->integer('price');
             $table->string('object');
             $table->string('place', 500);
-            $table->timestamp('date_begin');
-            $table->timestamp('date_end');
+            $table->dateTime('date_begin');
+            $table->dateTime('date_end');
             $table->string('description', 1000);
             $table->integer('id_user')->unsigned()->nullable();
 

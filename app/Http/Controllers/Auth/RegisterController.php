@@ -2,6 +2,7 @@
 
 namespace Tartempion\Http\Controllers\Auth;
 
+use Illuminate\Support\Facades\Request;
 use Tartempion\AddressModel;
 use Tartempion\User;
 use Tartempion\Http\Controllers\Controller;
@@ -29,6 +30,7 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+    private $from_select;
 
     /**
      * Create a new controller instance.
@@ -51,6 +53,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'surname' => 'between:1,50|required',
             'firstname' => 'between:1,50|required',
+            'sexe' => 'string',
             'email' => 'unique:users|email',
             'birth_date' => 'required|date',
             /*
@@ -61,7 +64,7 @@ class RegisterController extends Controller
             */
             'pseudo' => 'string|unique:users',
             'phone' => 'required|numeric',
-            'password' => 'required|between:5,100|confirmed',
+            'password' => 'required|between:5,100|confirmed'
         ]);
     }
 
@@ -76,6 +79,7 @@ class RegisterController extends Controller
         $user = User::create([
             'surname' => $data['surname'],
             'firstname' => $data['firstname'],
+            'sexe' =>  $data['sexe'],
             'birth_date' => $data['birth_date'],
             'email' => $data['email'],
             'pseudo' => $data['pseudo'],

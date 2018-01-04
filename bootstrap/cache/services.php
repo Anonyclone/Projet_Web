@@ -31,6 +31,7 @@
     27 => 'Tartempion\\Providers\\AuthServiceProvider',
     28 => 'Tartempion\\Providers\\EventServiceProvider',
     29 => 'Tartempion\\Providers\\RouteServiceProvider',
+    30 => 'Jenssegers\\Date\\DateServiceProvider',
   ),
   'eager' => 
   array (
@@ -50,6 +51,7 @@
     13 => 'Tartempion\\Providers\\AuthServiceProvider',
     14 => 'Tartempion\\Providers\\EventServiceProvider',
     15 => 'Tartempion\\Providers\\RouteServiceProvider',
+    16 => 'Jenssegers\\Date\\DateServiceProvider',
   ),
   'deferred' => 
   array (

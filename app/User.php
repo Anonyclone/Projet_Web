@@ -40,4 +40,8 @@ class User extends Authenticatable
     public function address() {
         return $this->belongsToMany('Tartempion\AddressMode');
     }
+
+    public function locations() {
+        return $this->hasMany('App\LocationModel');
+    }
 }

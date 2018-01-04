@@ -33,6 +33,12 @@ class AddForeignkeys extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+           $table->dropForeign('id_address');
+        });
+
+        Schema::table('addresses', function (Blueprint $table) {
+           $table->dropForeign('id_user');
+        });
     }
 }

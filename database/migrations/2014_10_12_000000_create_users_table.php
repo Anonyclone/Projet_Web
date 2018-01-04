@@ -21,15 +21,16 @@ class CreateUsersTable extends Migration
             $table->date('birth_date');
             $table->string('password');
             $table->string("pseudo", 50)->unique();
-            $table->string("phone", 11);
+            $table->string("phone");
             $table->rememberToken();
             $table->timestamps();
             $table->string('description', 500)->default('none');
             $table->boolean('permis')->default(false);
             $table->boolean('vehicule')->default(false);
-            $table->string('avatar', 1000)->default('img/avatars/users/default.png');
+            $table->string('avatar', 1000)->default('default.png');
+            $table->string('sexe')->default('homme');
             $table->integer('id_address')->unsigned()->nullable();
-        });
+            });
     }
 
     /**

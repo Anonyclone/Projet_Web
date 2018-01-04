@@ -37,6 +37,23 @@
                                     </button>
                                 </div>') !!}
                             </div>
+
+                            <div class="form-group {{ $errors->has('sexe') ? ' has-error' : '' }}">
+                                <label class="control-label">Sexe :</label>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="sexe" value="homme" checked>
+                                        Homme
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="sexe" value="femme">
+                                        Femme
+                                    </label>
+                                </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('birth_date') ? ' has-error' : '' }}">
                                 <label for="birth_date" class="control-label">Date de naissance</label>
                                 <input id="birth_date" type="date" class="form-control" name="birth_date" value="{{ old('birth_date') }}" required>
