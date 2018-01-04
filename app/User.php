@@ -1,6 +1,6 @@
 <?php
 
-namespace Tartempion;
+namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
     public function address() {
-        return $this->belongsToMany('Tartempion\AddressMode');
+        return $this->belongsToMany('App\AddressMode');
     }
 
     public function locations() {

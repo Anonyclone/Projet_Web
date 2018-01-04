@@ -66,3 +66,30 @@ body{
     width:700px;
     margin:auto;
 }
+
+img.avatar {
+    object-fit: cover;
+    border-style: none;
+}
+
+.normal {
+    height: 100px;
+    width: 100px;
+}
+
+img.avatar .landscape {
+    height: 100px;
+    width: 180px;
+}
+
+.circle {
+    border-radius: 360px;
+}
+
+.avatar-upload {
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}

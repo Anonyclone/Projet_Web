@@ -25,7 +25,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "Tartempion\\": "app/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {

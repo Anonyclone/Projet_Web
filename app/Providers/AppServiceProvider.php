@@ -1,6 +1,6 @@
 <?php
 
-namespace Tartempion\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Schema;

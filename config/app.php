@@ -174,11 +174,11 @@ return [
         /*
          * Application Service Providers...
          */
-        Tartempion\Providers\AppServiceProvider::class,
-        Tartempion\Providers\AuthServiceProvider::class,
-        // Tartempion\Providers\BroadcastServiceProvider::class,
-        Tartempion\Providers\EventServiceProvider::class,
-        Tartempion\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class
 
     ],

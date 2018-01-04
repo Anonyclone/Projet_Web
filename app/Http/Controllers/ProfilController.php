@@ -1,11 +1,11 @@
 <?php
 
-namespace Tartempion\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Tartempion\Http\Requests\UpdateProfilRequest;
+use App\Http\Requests\UpdateProfilRequest;
 
 class ProfilController extends Controller
 {

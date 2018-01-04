@@ -44,15 +44,15 @@ return [
     'disks' => [
         'avatar' => [
             'driver' => 'local',
-            'root' => storage_path('tartempion/public/img/avatars/users'),
+            'root' => storage_path('app/public/img/avatars/users'),
         ],
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('tartempion'),
+            'root' => storage_path('app'),
         ],
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('tartempion/public'),
+            'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
