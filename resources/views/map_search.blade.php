@@ -15,13 +15,19 @@
             <div class="card-body">
                 <div id="destinationForm">
                     <form action="" method="get" name="direction" id="direction">
-                        <div class="form-group">
-                            <label>Point de départ :</label>
-                            <input class="form-control" type="text" name="origin" id="origin">
-                        </div>
-                        <div class="form-group">
-                            <label>Destination :</label>
-                            <input class="form-control" type="text" name="destination" id="destination">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Point de départ :</label>
+                                    <input class="form-control" type="text" name="origin" id="origin">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Destination :</label>
+                                    <input class="form-control" type="text" name="destination" id="destination">
+                                </div>
+                            </div>
                         </div>
                         <input class="btn btn-outline-primary" value="Calculer l'itinéraire" type="button" onclick="javascript:calculate()">
                     </form>

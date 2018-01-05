@@ -188,7 +188,7 @@
                         </div>
                     </div>
 
-                    <a class="btn btn-outline-primary" href="{{ route('profil_get') }}"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
+                    <a class="btn btn-outline-primary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
                     <a class="btn btn-outline-warning" type="submit" href="#" onclick="document.getElementById('profil_form_edit').submit()">Valider <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
                     {!! Form::close() !!}
                 @else
@@ -310,7 +310,7 @@
                                 @endif
                             </div>
                         </div>
-                        <a class="btn btn-outline-primary" href="{{ route('home') }}"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
+                        <a class="btn btn-outline-primary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
                         <a class="btn btn-outline-info" type="submit" href="{{ route('profil_edit') }}">Éditer <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
                     </form>
                 @endif

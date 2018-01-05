@@ -44,4 +44,12 @@ class User extends Authenticatable
     public function locations() {
         return $this->hasMany('App\LocationModel');
     }
+
+    public function search($row, $query) {
+        return $this->where($row, "LIKE", "%{$query}%")->get();
+    }
+
+    public function getUser($id) {
+        return $this->where('id', $id)->get();
+    }
 }

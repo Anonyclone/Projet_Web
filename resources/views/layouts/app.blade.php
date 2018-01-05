@@ -77,6 +77,9 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li class="nav-item marging-left">
+                                <a class="btn btn-secondary" href="{{ route('users_search') }}"><i class="fa fa-plus"></i></a>
+                            </li>
                         @endguest
                     </ul>
                 </div>

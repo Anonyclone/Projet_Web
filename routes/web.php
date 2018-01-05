@@ -21,4 +21,7 @@ Route::get('/nouvelle/annonce', 'NewPostController@get')->name('new_post_get');
 Route::get('/chercher/annonce', 'SearchPostController@get')->name('search_post_get');
 Route::get('/utilisateur/confidentialite', 'SettingsController@get')->name('settings_get');
 Route::get('/utilisateur/confidentialite/edit', 'SettingsController@edit')->name('settings_edit');
-Route::post('/utilisateur/confidentialie/post', 'SettingsController@post')->name('settings_post');
+Route::post('/utilisateur/confidentialite/post', 'SettingsController@post')->name('settings_post');
+Route::get('/utilisateur/rechercher', 'UserController@get')->name('users_search');
+Route::post('/utilisateur/rechercher/post', 'UserController@post')->name('users_search_post');
+Route::get('/utilisateur/rechercher/profil/{id}', 'UserController@getUserProfil')->name('get_user_profil');

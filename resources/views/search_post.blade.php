@@ -15,7 +15,7 @@
                         <a class="nav-link active" data-toggle="pill" href="#location">Location</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="pill" href="#test">Covoiturage</a>
+                        <a class="nav-link" data-toggle="pill" href="#covoiturage">Covoiturage</a>
                     </li>
                 </ul>
 
@@ -54,7 +54,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="tab-pane" id="test">
+                    <div class="tab-pane" id="covoiturage">
                         <form>
                             <div class="form-group-fluid">
                                 <label for="VDep">Ville de départ : </label>

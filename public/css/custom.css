@@ -93,3 +93,11 @@ img.avatar .landscape {
 input[type="file"] {
     display: none;
 }
+
+.marging-left {
+    margin-left: 5px;
+}
+
+.user-find {
+    margin: 10px 0px;
+}

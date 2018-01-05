@@ -29,14 +29,16 @@ class ProfilController extends Controller
     }
 
     public function post(UpdateProfilRequest $request) {
-
+        $user = Auth::user();
         $avatar = $request->file('avatar');
         $path = config('avatar.path');
-        if($avatar->isValid())
-            $avatar->storeAs($path, $avatar->getClientOriginalName());
+        if(!is_null($avatar)) {
+            if ($avatar->isValid()) {
+                $avatar->storeAs($path, $avatar->getClientOriginalName());
+                $user->avatar = $avatar->getClientOriginalName();
+            }
+        }
 
-        $user = Auth::user();
-        $user->avatar = $avatar->getClientOriginalName();
         $user->sexe = $request->get('sexe');
         $user->surname = $request->input('surname');
         $user->firstname = $request->input('firstname');

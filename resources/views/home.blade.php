@@ -7,7 +7,9 @@
 @section('content')
     <div class="container">
         <div class="card card-default">
-            <div class="card-header">Espace personnel</div>
+            <div class="card-header">
+                <p class="lead">Espace personnel</p>
+            </div>
 
             <div class="card-body">
                 @if (session('status'))
