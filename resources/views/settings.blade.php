@@ -77,9 +77,11 @@
                             </button>
                         </div>') !!}
                     </div>
-                    <a class="btn btn-outline-primary" href="{{ route('settings_get') }}"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
-                    <a class="btn btn-outline-warning" type="submit" href="#" onclick="document.getElementById('user_settings_form_edit').submit()">Valider <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
                     {!! Form::close() !!}
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
+                    <a class="btn btn-danger float-right" type="submit" href="#" onclick="document.getElementById('user_settings_form_edit').submit()">Valider <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
                 </div>
             @else
                 <div class="card-header">
@@ -105,9 +107,11 @@
                             <label class="control-label">Mot de passe :</label>
                             <input class="form-control" name="password" type="password" value="coucou" readonly>
                         </div>
-                        <a class="btn btn-outline-primary" href="{{ route('home') }}"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
-                        <a class="btn btn-outline-info" type="submit" href="{{ route('settings_edit') }}">Editer <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
                     </form>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
+                    <a class="btn btn-secondary float-right" type="submit" href="{{ route('settings_edit') }}">Éditer <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
                 </div>
             @endif
         </div>

@@ -6,7 +6,7 @@
 
 
 @section('content')
-    <ul class="container">
+    <div class="container">
         <div class="card card-default">
             <div class="card-header">
                 <p class="lead">Rechercher des utilisateurs</p>
@@ -39,6 +39,9 @@
                         <p class="mb-0">Servez-vous de cette barre de recherches pour saisir un pseudo.</p>
                     </div>
                 @endforelse
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
             </div>
         </div>
     </div>

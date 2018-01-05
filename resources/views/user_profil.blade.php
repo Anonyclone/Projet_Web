@@ -118,8 +118,10 @@
                             @endif
                         </div>
                     </div>
-                    <a class="btn btn-outline-primary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
                 </form>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
             </div>
         </div>
     </div>

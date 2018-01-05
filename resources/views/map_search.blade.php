@@ -29,13 +29,16 @@
                                 </div>
                             </div>
                         </div>
-                        <input class="btn btn-outline-primary" value="Calculer l'itinéraire" type="button" onclick="javascript:calculate()">
                     </form>
                 </div>
                 <div id="panel"></div>
                 <div id="map">
                     <p>Veuillez patienter pendant le chargement de la carte...</p>
                 </div>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
+                <a href="#" class="btn btn-secondary float-right" type="button" onclick="javascript:calculate()">Calculer l'itinéraire <i class="fa fa-map" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>

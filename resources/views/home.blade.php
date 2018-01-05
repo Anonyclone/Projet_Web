@@ -24,6 +24,9 @@
                     <p class="mb-0">Vous pouvez maintenant publier ou chercher des annonces.</p>
                 </div>
             </div>
+            <div class="card-footer">
+                <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
+            </div>
         </div>
     </div>
 @endsection

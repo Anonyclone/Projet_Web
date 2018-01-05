@@ -187,10 +187,12 @@
                             @endif
                         </div>
                     </div>
-
-                    <a class="btn btn-outline-primary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
-                    <a class="btn btn-outline-warning" type="submit" href="#" onclick="document.getElementById('profil_form_edit').submit()">Valider <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
                     {!! Form::close() !!}
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
+                    <a class="btn btn-danger float-right" type="submit" href="#" onclick="document.getElementById('profil_form_edit').submit()">Valider <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                </div>
                 @else
                     <form>
                         <div class="row">
@@ -310,10 +312,12 @@
                                 @endif
                             </div>
                         </div>
-                        <a class="btn btn-outline-primary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
-                        <a class="btn btn-outline-info" type="submit" href="{{ route('profil_edit') }}">Éditer <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
                     </form>
-                @endif
             </div>
+            <div class="card-footer">
+                <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
+                <a class="btn btn-secondary float-right" type="submit" href="{{ route('profil_edit') }}">Éditer <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+            </div>
+            @endif
         </div>
 @stop
