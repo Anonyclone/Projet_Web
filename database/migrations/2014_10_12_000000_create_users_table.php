@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('avatar', 1000)->default('default.png');
             $table->string('sexe')->default('homme');
             $table->integer('id_address')->unsigned()->nullable();
+            $table->boolean('admin')->default(false);
             });
     }
 

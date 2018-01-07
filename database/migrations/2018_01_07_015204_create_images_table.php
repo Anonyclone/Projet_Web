@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdressesTable extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateAdressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('addresses', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('city_name', 100);
-            $table->integer('city_number');
-            $table->integer('street_number');
-            $table->string('street_name', 150);
-            $table->integer('id_user')->unsigned()->nullable();
+            $table->string('image', 1000)->default('default.png');
             $table->integer('id_location')->unsigned()->nullable();
+
+            $table->foreign('id_location')
+                    ->references('id')
+                    ->on('location');
         });
     }
 
@@ -32,6 +32,6 @@ class CreateAdressesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('adresses');
+        Schema::dropIfExists('images');
     }
 }

@@ -22,7 +22,7 @@
             <div class="container">
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name') }}
+                        <b>{{ config('app.name') }}</b> <i class="fa fa-leaf" aria-hidden="true"></i>
                     </a>
                     <button class="navbar-toggler pull-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars" aria-hidden="true"></i>

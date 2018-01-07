@@ -15,36 +15,135 @@
                     <div class="form-group">
                         <label for="title">Titre :</label>
                         <input type="text" name="title" class="form-control" value="">
+                        {!! $errors->first('title', '
+                        <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
+                            <strong>Erreur :</strong> :message
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>') !!}
                     </div>
-                    <div class="form-group">
-                        <label for="price">Tarif à l'heure :</label>
-                        <input type="number" class="form-control" name="price">
-                    </div>
-                    <div class="form-group">
-                        <label for="TypeLocation">Type de location :</label>
-                        <select class="form-control" type="text" name="location">
-                            <option value="velo">Vélo</option>
-                            <option value="moto">Moto</option>
-                            <option value="voiture">Voiture</option>
-                            <option value="autre">Autre</option>
-                        </select>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="price">Tarif à l'heure :</label>
+                                <input type="number" class="form-control" name="price">
+                                {!! $errors->first('price', '
+                                <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
+                                    <strong>Erreur :</strong> :message
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>') !!}
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="object">Type de location :</label><br>
+                                <select class="custom-select" type="text" name="object">
+                                    <option value="velo">Vélo</option>
+                                    <option value="moto">Moto</option>
+                                    <option value="voiture">Voiture</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="description">Description :</label>
                         <textarea type="text" class="form-control" name="description"></textarea>
+                        {!! $errors->first('description', '
+                        <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
+                            <strong>Erreur :</strong> :message
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>') !!}
                     </div>
                     <p class="lead underline">Disponibilité</p>
-                    <div class="form-group">
-                        <label for="LieuDispo">Le lieu :</label>
-                        <input type="text" class="form-control" name="lieuDispo" placeholder="Entrez le lieu de rendez-vous">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="form-group">
+                                <label for="city_name">Ville :</label>
+                                <input type="text" class="form-control" name="city_name" placeholder="Saisir la ville">
+                                {!! $errors->first('city_name', '
+                                <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
+                                    <strong>Erreur :</strong> :message
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>') !!}
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="city_number">Code postal :</label>
+                                <input type="number" class="form-control" name="city_number" pattern='`^[0-9]{2,}$`' min="0" placeholder="Saisir le code postal">
+                                {!! $errors->first('city_number', '
+                                <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
+                                    <strong>Erreur :</strong> :message
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>') !!}
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="date_begin">À partir du</label>
-                        <input type="date" class="form-control" name="date_begin">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label for="street_number">Numéro de voie :</label>
+                                <input type="number" class="form-control" min="0" name="street_number">
+                                {!! $errors->first('street_number', '
+                                <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
+                                    <strong>Erreur :</strong> :message
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>') !!}
+                            </div>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="street_name">Rue :</label>
+                                <input type="text" class="form-control" name="street_name" placeholder="Saisir la rue">
+                                {!! $errors->first('street_name', '
+                                <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
+                                    <strong>Erreur :</strong> :message
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>') !!}
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="date_end">jusqu'à</label>
-                        <input type="date" class="form-control" name="date_end">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="date_begin">À partir du</label>
+                                <input type="date" class="form-control" name="date_begin">
+                                {!! $errors->first('date_begin', '
+                                <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
+                                    <strong>Erreur :</strong> :message
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>') !!}
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="date_end">jusqu'à</label>
+                                <input type="date" class="form-control" name="date_end">
+                                {!! $errors->first('date_end', '
+                                <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
+                                    <strong>Erreur :</strong> :message
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>') !!}
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>

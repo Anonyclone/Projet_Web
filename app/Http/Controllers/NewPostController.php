@@ -14,4 +14,9 @@ class NewPostController extends Controller
     public function get() {
         return view('new_post');
     }
+
+    public function post(NewPostController $request) {
+        $user = Auth::user();
+
+    }
 }

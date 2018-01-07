@@ -13,7 +13,7 @@ class NewLocationRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,17 @@ class NewLocationRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'string:between:5:200|required',
+            'price' => 'numeric|required',
+            'object' => 'string|required',
+            'date_begin' => 'date|required',
+            'date_end' => 'date|required',
+            'description' => 'string|between:5,1000|required',
+
+            'city_name' => 'string|between:1,100|required',
+            'city_number' => 'numeric|required',
+            'street_number' => 'numeric|required',
+            'street_name' => 'string|between:1,150|required',
         ];
     }
 }
