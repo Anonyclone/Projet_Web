@@ -24,7 +24,7 @@ class SearchLocationRequest extends FormRequest
     public function rules()
     {
         return [
-            'lieu' => 'string|max:200',
+            'title' => 'string|max:200|required',
             'object' => 'string'
         ];
     }

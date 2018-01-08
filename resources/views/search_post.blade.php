@@ -15,9 +15,9 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="Location">Lieu de location : (optionnel)</label>
-                            <input type="text" class="form-control" name="lieu" />
-                            {!! $errors->first('lieu', '
+                            <label for="Location">Lieu de location :</label>
+                            <input type="text" class="form-control" name="title" />
+                            {!! $errors->first('title', '
                             <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
                                 <strong>Erreur :</strong> :message
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
