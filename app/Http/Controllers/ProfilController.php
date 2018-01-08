@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\AddressModel;
 use App\Http\Requests\LocationRequest;
 use App\LocationModel;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UpdateProfilRequest;
@@ -35,7 +36,7 @@ class ProfilController extends Controller
     }
 
     public function getLocation($id) {
-        $association = LocationModel::find($id)->with('userOwner')->with('address')->get();
+        $association = LocationModel::find($id)->with('userOwner')->with('address')->where('date_end', '<=', Carbon::now())->get();
         $n = Auth::id();
         return view('location_details', [
             'edit' => false,

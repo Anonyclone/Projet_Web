@@ -21,6 +21,7 @@ Route::post('/utilisateur/profil/post', 'ProfilController@post')->name('profil_p
 Route::get('/nouvelle/annonce', 'NewPostController@get')->name('new_post_get');
 Route::post('/nouvelle/annonce/post', 'NewPostController@post')->name('new_post_post');
 Route::get('/chercher/annonce', 'SearchPostController@get')->name('search_post_get');
+Route::post('/chercher/annonce/post', 'SearchPostController@post');
 Route::get('/utilisateur/confidentialite', 'SettingsController@get')->name('settings_get');
 Route::get('/utilisateur/confidentialite/edit', 'SettingsController@edit')->name('settings_edit');
 Route::post('/utilisateur/confidentialite/post', 'SettingsController@post')->name('settings_post');
@@ -33,6 +34,7 @@ Route::post('/utilisateur/profil/locations/{id}/post', 'ProfilController@postLoc
 Route::post('/utilisateur/profil/locations/{id}/delete', 'ProfilController@deleteLocation');
 Route::get('/utilisateur/profil/locations/{id}/{user}/details/', 'UserController@getLocation');
 Route::get('/utilisateur/rechercher/profil/{id}/{user}/details/', 'UserController@getLocation');
+Route::get('/chercher/annonce/{id}/{user}/details/', 'UserController@getLocation');
 Route::post('/utilisateur/rechercher/profil/{id}/{user}/contracter/', 'UserController@locationWanted');
 Route::post('/utilisateur/profil/locations/{id}/{user}/delete-contract', 'UserController@locationUnwanted');
 Route::get('/webservice', 'WebServiceController@getService')->name('webservice');
