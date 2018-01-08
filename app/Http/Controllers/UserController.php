@@ -8,6 +8,8 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use SoapClient;
+use SoapFault;
 
 class UserController extends Controller
 {
@@ -49,8 +51,22 @@ class UserController extends Controller
         $location->userCustomer()->associate($user_customer);
         $location->save();
 
+        $result = array();
+        $user = Auth::user();
+        try {
+            $clientSOAP = new SoapClient("http://127.0.0.1:8001/hello?wsdl");
+            $result[0] = $clientSOAP->helloWorld("Bonjour ".$user['pseudo']." et bienvenue sur votre espace personnel.");
+            $result[1] = $clientSOAP->helloWorld("Vous pouvez maintenant publier ou chercher des annonces.");
+
+        }
+        catch (SoapFault $exception) {
+            $result[0] = "Ah mince ! Il est impossible de se connecter au web service.";
+            $result[1] = "Vous pouvez tout de même publier ou chercher des annonces.";
+        }
+
         return view('home', [
-            'user' => $user_customer
+            'user' => $user_customer,
+            'message' => $result
         ]);
     }
 
@@ -60,8 +76,22 @@ class UserController extends Controller
         $location->userCustomer()->dissociate();
         $location->save();
 
+        $result = array();
+        $user = Auth::user();
+        try {
+            $clientSOAP = new SoapClient("http://127.0.0.1:8001/hello?wsdl");
+            $result[0] = $clientSOAP->helloWorld("Bonjour ".$user['pseudo']." et bienvenue sur votre espace personnel.");
+            $result[1] = $clientSOAP->helloWorld("Vous pouvez maintenant publier ou chercher des annonces.");
+
+        }
+        catch (SoapFault $exception) {
+            $result[0] = "Ah mince ! Il est impossible de se connecter au web service.";
+            $result[1] = "Vous pouvez tout de même publier ou chercher des annonces.";
+        }
+
         return view('home', [
-            'user' => $user_customer
+            'user' => $user_customer,
+            'message' => $result
         ]);
     }
 }
