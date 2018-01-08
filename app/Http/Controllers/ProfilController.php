@@ -26,8 +26,8 @@ class ProfilController extends Controller
 
     public function locations() {
         $user = Auth::user();
-        $locations_owner = LocationModel::where('user_post_id', '=', $user['id'])->get();
-        $locations_customer = LocationModel::where('user_get_id', '=', $user['id'])->get();
+        $locations_owner = LocationModel::where('user_post_id', '=', $user['id'])->where('date_end', '<=', Carbon::now())->get();
+        $locations_customer = LocationModel::where('user_get_id', '=', $user['id'])->where('date_end', '<=', Carbon::now())->get();
         return view('user_locations', [
             'user' => $user,
             'locations_owner' => $locations_owner,
@@ -35,21 +35,19 @@ class ProfilController extends Controller
         ]);
     }
 
-    public function getLocation($id) {
-        $association = LocationModel::find($id)->with('userOwner')->with('address')->where('date_end', '<=', Carbon::now())->get();
-        $n = Auth::id();
+    public function getLocation($id, $user) {
+        $association = LocationModel::find($id)->with('userOwner')->with('address')->get();
         return view('location_details', [
             'edit' => false,
-            'association' => $association[$n-1]
+            'association' => $association[$user-1]
         ]);
     }
 
-    public function editLocation($id) {
+    public function editLocation($id, $user) {
         $association = LocationModel::find($id)->with('userOwner')->with('address')->get();
-        $n = Auth::id();
         return view('location_details', [
             'edit' => true,
-            'association' => $association[$n-1]
+            'association' => $association[$user-1]
         ]);
     }
 

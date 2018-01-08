@@ -28,9 +28,9 @@ Route::post('/utilisateur/confidentialite/post', 'SettingsController@post')->nam
 Route::get('/utilisateur/rechercher', 'UserController@get')->name('users_search');
 Route::post('/utilisateur/rechercher/post', 'UserController@post')->name('users_search_post');
 Route::get('/utilisateur/rechercher/profil/{id}', 'UserController@getUserProfil')->name('get_user_profil');
-Route::get('/utilisateur/profil/locations/{id}', 'ProfilController@getLocation');
-Route::get('/utilisateur/profil/locations/{id}/edit', 'ProfilController@editLocation')->name('location_edit');
-Route::post('/utilisateur/profil/locations/{id}/post', 'ProfilController@postLocation');
+Route::get('/utilisateur/profil/locations/{id}/{user}', 'ProfilController@getLocation');
+Route::get('/utilisateur/profil/locations/{id}/{user}/edit', 'ProfilController@editLocation')->name('location_edit');
+Route::post('/utilisateur/profil/locations/{id}/{user}/post', 'ProfilController@postLocation');
 Route::post('/utilisateur/profil/locations/{id}/delete', 'ProfilController@deleteLocation');
 Route::get('/utilisateur/profil/locations/{id}/{user}/details/', 'UserController@getLocation');
 Route::get('/utilisateur/rechercher/profil/{id}/{user}/details/', 'UserController@getLocation');
