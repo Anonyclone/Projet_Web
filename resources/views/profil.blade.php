@@ -191,7 +191,7 @@
                 </div>
                 <div class="card-footer">
                     <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
-                    <a class="btn btn-danger float-right" type="submit" href="#" onclick="document.getElementById('profil_form_edit').submit()">Valider <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                    <a class="btn btn-success float-right" type="submit" href="#" onclick="document.getElementById('profil_form_edit').submit()">Valider <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
                 </div>
                 @else
                     <form>

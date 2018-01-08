@@ -18,7 +18,7 @@ class CreateLocationTable extends Migration
             $table->timestamps();
             $table->string('title', 200);
             $table->integer('price');
-            $table->string('object');
+            $table->string('object')->default("velo");
             $table->date('date_begin');
             $table->date('date_end');
             $table->string('description', 1000);

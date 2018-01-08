@@ -42,7 +42,7 @@ class User extends Authenticatable
     }
 
     public function locations() {
-        return $this->hasMany('App\LocationModel');
+        return $this->hasMany('App\LocationModel', 'user_post_id');
     }
 
     public function search($row, $query) {

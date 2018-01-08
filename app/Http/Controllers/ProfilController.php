@@ -35,18 +35,20 @@ class ProfilController extends Controller
     }
 
     public function getLocation($id) {
+        $association = LocationModel::find($id)->with('userOwner')->with('address')->get();
+        $n = Auth::id();
         return view('location_details', [
-            'user' => Auth::user(),
             'edit' => false,
-            'association' => LocationModel::find($id)->with('userOwner')->with('address')->get()
+            'association' => $association[$n-1]
         ]);
     }
 
     public function editLocation($id) {
+        $association = LocationModel::find($id)->with('userOwner')->with('address')->get();
+        $n = Auth::id();
         return view('location_details', [
-            'user' => Auth::user(),
             'edit' => true,
-            'association' => LocationModel::find($id)->with('userOwner')->with('address')->get()
+            'association' => $association[$n-1]
         ]);
     }
 
@@ -76,6 +78,13 @@ class ProfilController extends Controller
             'user' => Auth::user()
         ]);
     }
+
+    public function deleteLocation($id) {
+        LocationModel::destroy($id);
+
+        return view('home', [
+            'user' => Auth::user()
+        ]);    }
 
     public function edit() {
         return view('profil', [

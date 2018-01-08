@@ -13,7 +13,7 @@ class SearchLocationRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class SearchLocationRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'lieu' => 'string|max:200|required',
+            'object' => 'string',
+
         ];
     }
 }
