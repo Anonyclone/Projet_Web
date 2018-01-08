@@ -12,16 +12,11 @@
             </div>
 
             <div class="card-body">
-                @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
                 <div class="alert alert-secondary" role="alert">
                     <h4 class="alert-heading">Message du web service !</h4>
-                    <p>{{ $message[0] }}</p>
+                    <p>{{ $message }}</p>
                     <hr>
-                    <p class="mb-0">{{ $message[1] }}</p>
+                    <p class="mb-0">Qu'en pensez-vous ?</p>
                 </div>
             </div>
             <div class="card-footer">

@@ -35,3 +35,4 @@ Route::get('/utilisateur/profil/locations/{id}/{user}/details/', 'UserController
 Route::get('/utilisateur/rechercher/profil/{id}/{user}/details/', 'UserController@getLocation');
 Route::post('/utilisateur/rechercher/profil/{id}/{user}/contracter/', 'UserController@locationWanted');
 Route::post('/utilisateur/profil/locations/{id}/{user}/delete-contract', 'UserController@locationUnwanted');
+Route::get('/webservice', 'WebServiceController@getService')->name('webservice');
