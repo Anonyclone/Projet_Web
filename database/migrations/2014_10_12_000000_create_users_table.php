@@ -24,12 +24,12 @@ class CreateUsersTable extends Migration
             $table->string("phone");
             $table->rememberToken();
             $table->timestamps();
-            $table->string('description', 500)->default('none');
+            $table->string('description', 500)->default('Sans description.');
             $table->boolean('permis')->default(false);
             $table->boolean('vehicule')->default(false);
             $table->string('avatar', 1000)->default('default.png');
             $table->string('sexe')->default('homme');
-            $table->integer('id_address')->unsigned()->nullable();
+            $table->integer('address_id')->unsigned()->nullable();
             $table->boolean('admin')->default(false);
             });
     }

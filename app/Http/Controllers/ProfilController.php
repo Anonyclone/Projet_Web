@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\AddressModel;
+use App\Http\Requests\LocationRequest;
+use App\LocationModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UpdateProfilRequest;
@@ -21,10 +23,64 @@ class ProfilController extends Controller
         ]);
     }
 
+    public function locations() {
+        $user = Auth::user();
+        $locations_owner = LocationModel::where('user_post_id', '=', $user['id'])->get();
+        $locations_customer = LocationModel::where('user_get_id', '=', $user['id'])->get();
+        return view('user_locations', [
+            'user' => $user,
+            'locations_owner' => $locations_owner,
+            'locations_customer' => $locations_customer
+        ]);
+    }
+
+    public function getLocation($id) {
+        return view('location_details', [
+            'user' => Auth::user(),
+            'edit' => false,
+            'association' => LocationModel::find($id)->with('userOwner')->with('address')->get()
+        ]);
+    }
+
+    public function editLocation($id) {
+        return view('location_details', [
+            'user' => Auth::user(),
+            'edit' => true,
+            'association' => LocationModel::find($id)->with('userOwner')->with('address')->get()
+        ]);
+    }
+
+    public function postLocation($id, LocationRequest $request) {
+        $location = LocationModel::find($id);
+
+        $location->title = $request->input('title');
+        $location->price = $request->input('price');
+        $location->object = $request->get('object');
+        $location->date_begin = $request->input('date_begin');
+        $location->date_end = $request->input('date_end');
+        $location->description = $request->input('description');
+        $location->active = true;
+
+
+        $address = new AddressModel();
+        $address->city_name = $request->input('city_name');
+        $address->city_number = $request->input('city_number');
+        $address->street_number = $request->input('street_number');
+        $address->street_name = $request->input('street_name');
+        $address->save();
+
+        $location->address()->associate($address);
+        $location->save();
+
+        return view('home', [
+            'user' => Auth::user()
+        ]);
+    }
+
     public function edit() {
         return view('profil', [
-           'edit' => true,
-           'user' => Auth::user()
+            'edit' => true,
+            'user' => Auth::user()
         ]);
     }
 
@@ -49,8 +105,8 @@ class ProfilController extends Controller
         $user->vehicule = $request->input('vehicule');
         $user->save();
         return view('profil', [
-           'edit' => false,
-           'user' => $user
+            'edit' => false,
+            'user' => $user
         ]);
     }
 }

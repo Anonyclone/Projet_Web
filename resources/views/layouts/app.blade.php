@@ -59,6 +59,9 @@
                                         <a href="{{ route('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a>
                                     </li>
                                     <li class="dropdown-item">
+                                        <a href="{{ route('profil_locations') }}"><i class="fa fa-bell" aria-hidden="true"></i> Mes locations</a>
+                                    </li>
+                                    <li class="dropdown-item">
                                         <a href="{{ route('profil_get') }}"><i class="fa fa-user" aria-hidden="true"></i> Profil</a>
                                     </li>
                                     <li class="dropdown-item">

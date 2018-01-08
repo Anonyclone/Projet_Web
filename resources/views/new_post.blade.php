@@ -10,7 +10,7 @@
                 <p class="lead">Poster une annonce de location</p>
             </div>
             <div class="card-body">
-                <form id="form_location_post">
+                {!! Form::open(['url' => '/nouvelle/annonce/post', 'id' => 'form_location_post']) !!}
                     <p class="lead underline">Caractéristiques</p>
                     <div class="form-group">
                         <label for="title">Titre :</label>
@@ -27,7 +27,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="price">Tarif à l'heure :</label>
-                                <input type="number" class="form-control" name="price">
+                                <input type="number" class="form-control" name="price" min="0">
                                 {!! $errors->first('price', '
                                 <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
                                     <strong>Erreur :</strong> :message
@@ -62,7 +62,7 @@
                     </div>
                     <p class="lead underline">Disponibilité</p>
                     <div class="row">
-                        <div class="col-sm-9">
+                        <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="city_name">Ville :</label>
                                 <input type="text" class="form-control" name="city_name" placeholder="Saisir la ville">
@@ -75,10 +75,10 @@
                                 </div>') !!}
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-2">
                             <div class="form-group">
                                 <label for="city_number">Code postal :</label>
-                                <input type="number" class="form-control" name="city_number" pattern='`^[0-9]{2,}$`' min="0" placeholder="Saisir le code postal">
+                                <input type="number" class="form-control" name="city_number" pattern='`^[0-9]{2,}$`' min="0">
                                 {!! $errors->first('city_number', '
                                 <div class="alert alert-danger alert-dismissible padding-alert fade show" role="alert">
                                     <strong>Erreur :</strong> :message
@@ -145,7 +145,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                {!! Form::close() !!}
             </div>
             <div class="card-footer">
                 <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>

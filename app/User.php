@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
     public function address() {
-        return $this->belongsToMany('App\AddressMode');
+        return $this->belongsToMany('App\AddressModel');
     }
 
     public function locations() {
@@ -47,9 +47,5 @@ class User extends Authenticatable
 
     public function search($row, $query) {
         return $this->where($row, "LIKE", "%{$query}%")->get();
-    }
-
-    public function getUser($id) {
-        return $this->where('id', $id)->get();
     }
 }

@@ -19,25 +19,25 @@ class CreateLocationTable extends Migration
             $table->string('title', 200);
             $table->integer('price');
             $table->string('object');
-            $table->dateTime('date_begin');
-            $table->dateTime('date_end');
+            $table->date('date_begin');
+            $table->date('date_end');
             $table->string('description', 1000);
             $table->boolean('active', false);
-            $table->integer('id_user_post')->unsigned()->nullable();
-            $table->integer('id_user_get')->unsigned()->nullable();
-            $table->integer('id_address')->unsigned()->nullable();
+            $table->integer('user_post_id')->unsigned()->nullable();
+            $table->integer('user_get_id')->unsigned()->nullable();
+            $table->integer('address_id')->unsigned()->nullable();
 
-            $table->foreign('id_user_offer')
+            $table->foreign('user_post_id')
                     ->references('id')
                     ->on('users');
 
-            $table->foreign('id_user_post')
+            $table->foreign('user_get_id')
                     ->references('id')
                     ->on('users');
 
-            $table->foreign('id_address')
+            $table->foreign('address_id')
                     ->references('id')
-                    ->on('users');
+                    ->on('addresses');
         });
     }
 

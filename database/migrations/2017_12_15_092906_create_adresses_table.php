@@ -20,8 +20,8 @@ class CreateAdressesTable extends Migration
             $table->integer('city_number');
             $table->integer('street_number');
             $table->string('street_name', 150);
-            $table->integer('id_user')->unsigned()->nullable();
-            $table->integer('id_location')->unsigned()->nullable();
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('location_id')->unsigned()->nullable();
         });
     }
 

@@ -19,4 +19,8 @@ class AddressModel extends Model
     public function user() {
         return $this->belongsToMany('App\User');
     }
+
+    public function locations() {
+        return $this->hasMany('App\LocationModel');
+    }
 }
