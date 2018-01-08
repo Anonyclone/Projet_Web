@@ -41,7 +41,7 @@ class ProfilController extends Controller
         $association = LocationModel::find($id)->with('userOwner')->with('address')->get();
         return view('location_details', [
             'edit' => false,
-            'association' => $association[$user-1]
+            'association' => $association[Auth::id()-1]
         ]);
     }
 
@@ -49,7 +49,7 @@ class ProfilController extends Controller
         $association = LocationModel::find($id)->with('userOwner')->with('address')->get();
         return view('location_details', [
             'edit' => true,
-            'association' => $association[$user-1]
+            'association' => $association[Auth::id()-1]
         ]);
     }
 

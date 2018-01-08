@@ -265,7 +265,7 @@
             </div>
             <div class="card-footer">
                 <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
-                <a class="btn btn-secondary float-right" type="submit" href="{{ URL::to('/utilisateur/profil/locations/'.$association->id.'/edit') }}">Éditer <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                <a class="btn btn-secondary float-right" type="submit" href="{{ URL::to('/utilisateur/profil/locations/'.$association->id.'/edit/') }}">Éditer <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
             </div>
     </div>
     @endif
