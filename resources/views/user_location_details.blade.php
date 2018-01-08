@@ -85,10 +85,73 @@
                     </div>
                 </form>
             </div>
-            <div class="card-footer">
-                <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
-                <a class="btn btn-secondary float-right" type="submit" href="{{ URL::to('/utilisateur/profil/locations/'.$association->id.'/edit') }}">Éditer <i class="fa fa-pencil-square" aria-hidden="true"></i></a>
-            </div>
+
+
+            @if(is_null($association->user_get_id))
+
+                <div class="card-footer">
+                    <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
+                    <button class="btn btn-secondary float-right" type="submit" data-toggle="modal" data-target="#confirmationDialog">Demander la location <i class="fa fa-commenting" aria-hidden="true"></i></button>
+                </div>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="confirmationDialog" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <p class="lead" id="modalTitle">Êtes-vous sûr ?</p>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Attention, voulez-vous vraiment contracter la location nommée <b>"{{ $association->title }}"</b> ?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</button>
+                                {!! Form::open(['url' => '/utilisateur/rechercher/profil/'.$association->id.'/'.$user_id.'/contracter/']) !!}
+                                <button type="submit" class="btn btn-success">Confirmer <i class="fa fa-check-square" aria-hidden="true"></i></button>
+                                {!! Form::close() !!}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @elseif($association->user_get_id == Auth::id())
+                <div class="card-footer">
+                    <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
+                    <div class="float-right">
+                        <button class="btn btn-secondary" type="submit" data-toggle="modal" data-target="#confirmationDialog">Supprimer le contrat <i class="fa fa-times-circle" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="confirmationDialog" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <p class="lead" id="modalTitle">Êtes-vous sûr ?</p>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Attention, voulez-vous vraiment supprimer votre contrat pour l'annonce nommée <b>"{{ $association->title }}"</b> ?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</button>
+                                {!! Form::open(['url' => '/utilisateur/profil/locations/'.$association->id.'/'.$user_id.'/delete-contract']) !!}
+                                <button type="submit" class="btn btn-danger">Supprimer le contrat <i class="fa fa-exclamation-triangle" aria-hidden="true"></i></button>
+                                {!! Form::close() !!}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @else
+                <div class="card-footer">
+                    <a class="btn btn-secondary" href="#" onclick="window.history.back();"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour</a>
+                </div>
+            @endif
         </div>
     </div>
 @endsection

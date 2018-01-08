@@ -27,18 +27,41 @@ class UserController extends Controller
 
     public function getUserProfil($id) {
         $association = User::find($id)->with('locations')->get();
-        $posts = LocationModel::where('user_post_id', '=', Auth::id())->get();
+        $posts = LocationModel::where('user_post_id', '=', $id)->get();
         return view('user_profil', [
             'association' => $association[$id-1],
-            'posts' => $posts
+            'posts' => $posts,
+            'user_id' => $id
         ]);
     }
 
-    public function getLocation($id) {
+    public function getLocation($id, $user) {
         $association = LocationModel::find($id)->with('userOwner')->with('address')->get();
-        $n = Auth::id();
         return view('user_location_details', [
-            'association' => $association[$n-1]
+            'association' => $association[$user-1],
+            'user_id' => $user
+        ]);
+    }
+
+    public function locationWanted($id, $user) {
+        $location = LocationModel::find($id);
+        $user_customer = Auth::user();
+        $location->userCustomer()->associate($user_customer);
+        $location->save();
+
+        return view('home', [
+            'user' => $user_customer
+        ]);
+    }
+
+    public function locationUnwanted($id, $user) {
+        $location = LocationModel::find($id);
+        $user_customer = Auth::user();
+        $location->userCustomer()->dissociate();
+        $location->save();
+
+        return view('home', [
+            'user' => $user_customer
         ]);
     }
 }

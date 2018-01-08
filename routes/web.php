@@ -31,4 +31,7 @@ Route::get('/utilisateur/profil/locations/{id}', 'ProfilController@getLocation')
 Route::get('/utilisateur/profil/locations/{id}/edit', 'ProfilController@editLocation')->name('location_edit');
 Route::post('/utilisateur/profil/locations/{id}/post', 'ProfilController@postLocation');
 Route::post('/utilisateur/profil/locations/{id}/delete', 'ProfilController@deleteLocation');
-Route::get('/utilisateur/rechercher/profil/{id}/details/', 'UserController@getLocation');
+Route::get('/utilisateur/profil/locations/{id}/{user}/details/', 'UserController@getLocation');
+Route::get('/utilisateur/rechercher/profil/{id}/{user}/details/', 'UserController@getLocation');
+Route::post('/utilisateur/rechercher/profil/{id}/{user}/contracter/', 'UserController@locationWanted');
+Route::post('/utilisateur/profil/locations/{id}/{user}/delete-contract', 'UserController@locationUnwanted');

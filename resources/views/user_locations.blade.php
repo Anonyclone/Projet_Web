@@ -27,7 +27,10 @@
                 @endforelse
                 <p class="lead underline">Locations contractées</p>
                 @forelse($locations_customer as $location)
-                    {{ $location['title'] }}
+                    <p>Titre :  <b>{{ $location['title'] }}</b></p>
+                    <p>Date de création :  <b>{{ $location['created_at'] }}</b></p>
+                    <p>Date de modification :  <b>{{ $location['updated_at'] }}</b></p>
+                    <a href="{{ URL::to('/utilisateur/profil/locations/'.$location['id'].'/'.$location['user_post_id'].'/details/') }}" class="btn btn-outline-info">Voir en détails <i class="fa fa-address-card" aria-hidden="true"></i></a>
                 @empty
                     <div class="alert alert-secondary" role="alert">
                         <h4 class="alert-heading">Oups !?</h4>
